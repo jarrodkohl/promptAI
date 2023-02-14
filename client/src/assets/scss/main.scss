@@ -12,3 +12,31 @@
   -moz-tab-size: 4;
   tab-size: 4;
 }
+
+
+.saved-prompt-tile {
+  box-shadow: 2px 2px 8px #5b95f4;
+}
+
+.orange-btn {
+  background-color: #ffa500;
+  border: none;
+  color: #ffffff;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.orange-btn:hover {
+  background-color: #ff8c00;
+}
+
+.app-main-div {
+
+  text-align: center;
+}
