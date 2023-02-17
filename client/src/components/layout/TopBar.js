@@ -29,7 +29,7 @@ const TopBar = ({ user }) => {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/test-api">Testing!</Link>
+            <Link to="/prompt">Digital Muse</Link>
           </li>
         </ul>
       </div>
