@@ -3,6 +3,7 @@ import userSessionsRouter from "./api/v1/userSessionsRouter.js";
 import usersRouter from "./api/v1/usersRouter.js";
 import clientRouter from "./clientRouter.js";
 import openAiRouter from "./api/v1/openAiRouter.js";
+import promptRouter from "./api/promptRouter.js";
 
 const rootRouter = new express.Router();
 
@@ -16,6 +17,7 @@ rootRouter.use("/api/v1/generate-prompt", (req, res, next) => {
   });
   
 rootRouter.use("/api/v1/openai", openAiRouter);
+rootRouter.use("/api/v1/prompts", promptRouter)
 
 
 

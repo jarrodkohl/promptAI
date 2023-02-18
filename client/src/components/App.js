@@ -7,7 +7,8 @@ import "../assets/scss/main.scss";
 import RegistrationForm from "./registration/RegistrationForm";
 import SignInForm from "./authentication/SignInForm";
 import TopBar from "./layout/TopBar";
-import PromptTest from "./PromptTest";
+import GetPrompt from "./GetPrompt";
+import AuthenticatedRoute from "./authentication/AuthenticatedRoute.js"
 
 
 const App = (props) => {
@@ -32,7 +33,7 @@ const App = (props) => {
         <Route exact path="/">
           <h2>This is PromptAI</h2>
         </Route>
-        <Route exact path="/test-api" component={PromptTest} />
+        <AuthenticatedRoute exact path="/prompt" component={GetPrompt} user={currentUser}/>
         <Route exact path="/users/new" component={RegistrationForm} />
         <Route exact path="/user-sessions/new" component={SignInForm} />
       </Switch>

@@ -61,12 +61,14 @@ const RegistrationForm = () => {
             "Content-Type": "application/json",
           }),
         });
+        console.log(response)
         if (!response.ok) {
           const errorMessage = `${response.status} (${response.statusText})`;
           const error = new Error(errorMessage);
           throw error;
         }
         const userData = await response.json();
+        console.log(userData)
         setShouldRedirect(true);
       }
     } catch (err) {
