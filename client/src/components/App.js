@@ -9,6 +9,8 @@ import SignInForm from "./authentication/SignInForm";
 import TopBar from "./layout/TopBar";
 import GetPrompt from "./GetPrompt";
 import AuthenticatedRoute from "./authentication/AuthenticatedRoute.js"
+import PromptIndex from "./PromptIndex";
+import PromptShowPage from "./PromptShowPage";
 
 
 const App = (props) => {
@@ -34,6 +36,8 @@ const App = (props) => {
           <h2>This is PromptAI</h2>
         </Route>
         <AuthenticatedRoute exact path="/prompt" component={GetPrompt} user={currentUser}/>
+        <AuthenticatedRoute exact path="/prompts" component={PromptIndex} user={currentUser}/>
+        <AuthenticatedRoute exact path="/prompts/:id" component={PromptShowPage} user={currentUser}/>
         <Route exact path="/users/new" component={RegistrationForm} />
         <Route exact path="/user-sessions/new" component={SignInForm} />
       </Switch>
