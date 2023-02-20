@@ -5,11 +5,9 @@
 
 	promptRouter.get('/', async (req, res) =>{
 			try {
-				const { limit = 3, order = 'desc' } = req.query
-				// const { userId, limit = 3, order = 'desc' } = req.query
+				const { order = 'desc' } = req.query
 				const prompts = await Prompt.query()
 					.where({ userId: req.user.id })
-					.limit(limit)
 					.orderBy('createdAt', order)
 				res.status(200).json({ prompts })
 			} catch (error) {
@@ -30,6 +28,16 @@
 			} catch (error) {
 				console.error(error);
 				res.status(500).json({ message: 'An error occurred while saving the prompt' });
+			}
+		})
+
+		promptRouter.get("/:id", async (req, res) =>{
+			const { id } = req.params
+			try {
+				const prompt = await Prompt.query().findById(id)
+				return res.status(200).json({ prompt })
+			} catch (error) {
+				return res.status(500).json({ errors: error })
 			}
 		})
 
