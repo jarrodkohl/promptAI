@@ -11,6 +11,8 @@ import GetPrompt from "./GetPrompt";
 import AuthenticatedRoute from "./authentication/AuthenticatedRoute.js"
 import PromptIndex from "./PromptIndex";
 import PromptShowPage from "./PromptShowPage";
+import LandingPage from "./LandingPage";
+import EntryShowPage from "./EntryShowPage";
 
 
 const App = (props) => {
@@ -32,17 +34,16 @@ const App = (props) => {
     <Router>
       <TopBar user={currentUser} />
       <Switch>
-        <Route exact path="/">
-          <h2>This is PromptAI</h2>
-        </Route>
+        <Route exact path="/" component={LandingPage} user={currentUser} />
         <AuthenticatedRoute exact path="/prompt" component={GetPrompt} user={currentUser}/>
         <AuthenticatedRoute exact path="/prompts" component={PromptIndex} user={currentUser}/>
         <AuthenticatedRoute exact path="/prompts/:id" component={PromptShowPage} user={currentUser}/>
+        <AuthenticatedRoute exact path="/prompts/:promptId/entries/:entryId" component={EntryShowPage} user={currentUser} />
         <Route exact path="/users/new" component={RegistrationForm} />
         <Route exact path="/user-sessions/new" component={SignInForm} />
       </Switch>
     </Router>
-  );
+  )
 };
 
 export default hot(App);

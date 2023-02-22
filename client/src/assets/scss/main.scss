@@ -13,9 +13,13 @@
   tab-size: 4;
 }
 
-
-.saved-prompt-tile {
-  box-shadow: 2px 2px 8px #5b95f4;
+.landing-page-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4e8da;
 }
 
 .orange-btn {
@@ -36,19 +40,120 @@
   background-color: #ff8c00;
 }
 
-.app-main-div {
+.sign-out-btn {
+  background-color: #ff8c00;
+  border-radius: 20px;
+}
 
+.app-main-div {
   text-align: center;
 }
 
-// .top-bar {
-//   z-index: 1;
-//   margin-top: -50px;
-//   width: 100%;
-//   position: absolute;
-//   transition: margin-top 1000ms;
-// }
+.top-bar {
+  z-index: 1;
+  // margin-top: -50px;
+  width: 100%;
+  // position: absolute;
+  transition: margin-top 100ms;
+  background-color: #f4e8da;
+}
+.top-bar ul {
+  background-color: #f4e8da;
+}
 
 // .top-bar:hover {
 //   margin-top: 0px;
 // }
+.menu {
+  background-color: #f4e8da;
+}
+
+.menu-text {
+  color: #000000;
+}
+
+.top-bar-left{
+  background-color: #ff8c00;
+}
+
+
+.saved-prompt-tile {
+  box-shadow: 2px 2px 8px #5b95f4;
+  width: 300px;
+  height: 200px;
+  border-radius: 10px;
+  padding: .5rem;
+}
+
+.prompt-tiles-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.prompt-list-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-profile-prompt {
+  box-shadow: 2px 2px 8px #ee841a;
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 3rem;
+}
+
+.entry-input{
+  box-shadow: 2px 2px 8px #ee841a;
+  border-radius: 10px;
+}
+
+.title-field{
+  max-width: 300px;
+}
+
+.label-field{
+  max-width: 300px;
+}
+
+.textarea-field{
+  min-height: 200px;
+}
+
+.entry-list-title{
+  text-align: center;
+}
+
+.entry-tile{
+  box-shadow: 2px 2px 8px #5b95f4;
+  max-width: 300px;
+  height: auto;
+  border-radius: 10px;
+  padding: .5rem;
+}
+
+.entry-tile-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-direction: row;
+}
+
+.show-label{
+  box-shadow: 2px 2px 8px #8b857f;
+  padding: .3em;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.show-title{
+  font-weight: bold;
+}
+
+.show-entry-content{
+  box-shadow: 1px 1px 4px #7ca7ec;
+  padding: .5rem;
+}

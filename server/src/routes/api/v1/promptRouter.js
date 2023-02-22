@@ -1,15 +1,25 @@
 	import express from 'express'
-	import Prompt from "../../models/Prompt.js"
+	import Prompt from "../../../models/Prompt.js"
+	import promptEntryRouter from "./promptEntryRouter.js";
+	import entryRouter from './entryRouter.js';
 
 	const promptRouter = express.Router()
 
 	promptRouter.get('/', async (req, res) =>{
 			try {
-				const { order = 'desc' } = req.query
-				const prompts = await Prompt.query()
-					.where({ userId: req.user.id })
-					.orderBy('createdAt', order)
-				res.status(200).json({ prompts })
+				const { order = 'desc', limit } = req.query
+				if (limit) {
+					const prompts = await Prompt.query()
+						.where({ userId: req.user.id })
+						.orderBy('createdAt', order)
+						.limit(limit)
+					res.status(200).json({ prompts })
+				} else {
+					const prompts = await Prompt.query()
+						.where({ userId: req.user.id })
+						.orderBy('createdAt', order)
+					res.status(200).json({ prompts })
+				}
 			} catch (error) {
 				console.error(error);
 				res.status(500).json({ error: 'Internal server error' })
@@ -40,6 +50,12 @@
 				return res.status(500).json({ errors: error })
 			}
 		})
+
+
+		promptRouter.use("/:promptId/entries", promptEntryRouter)
+		promptRouter.use('/:promptId/entries/:entryId', entryRouter)
+
+
 
 		export default promptRouter
 

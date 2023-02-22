@@ -8,7 +8,7 @@ const PromptIndex = props => {
 
   const getUserPrompts = async () =>{
       try {
-        const response = await fetch(`/api/v1/prompts?userId=${props.user.id}&order=desc`)
+        const response = await fetch(`/api/v1/prompts?order=desc`)
         const data = await response.json()
         setUserPrompts(data.prompts)
       } catch (error) {
@@ -31,10 +31,12 @@ const PromptIndex = props => {
   })
 
   return(
-    <div>
+    <div className="grid-container prompt-list-container">
+      <div className="user-profile-prompt">
       <h1>{props.user.email}'s Saved Prompts!</h1>
+      </div>
 
-      <div>
+      <div className="grid-x grid-margin-x prompt-tiles-container">
         {promptTiles}
       </div>
     </div>

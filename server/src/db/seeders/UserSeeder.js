@@ -5,11 +5,11 @@ class UserSeeder {
     const userData = [
       {
         email: "jarrod@promptai.com",
-        cryptedPassword: "password123",
+        password: "password123",
       },
       {
         email: "zach@yahoo.com",
-        cryptedPassword: "notpassword"
+        password: "notpassword"
       }
     ]
     

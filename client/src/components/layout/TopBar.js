@@ -24,12 +24,14 @@ const TopBar = ({ user }) => {
     <div className="top-bar">
       <div className="top-bar-left">
         <ul className="menu">
-          <li className="menu-text">PromptAI</li>
-          <li>
-            <Link to="/">Home</Link>
+          <li className="menu-text">
+            <Link to="/">PromptAi</Link>
           </li>
-          <li>
+          <li className="menu-text">
             <Link to="/prompt">Digital Muse</Link>
+          </li>
+          <li className="menu-text">
+            <Link to="/prompts">All My Prompts</Link>
           </li>
         </ul>
       </div>
