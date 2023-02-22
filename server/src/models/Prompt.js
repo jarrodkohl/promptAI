@@ -6,16 +6,24 @@ class Prompt extends Model {
 	}
 
 	static get relationMappings() {
-		const { User } = require("./index")
+		const { User, Entry } = require("./index")
 
 		return {
 				user: {
-						relation: Model.BelongsToOneRelation,
-						modelClass: User,
-						join: {
-							from: 'prompt.userId',
-							to: 'users.id',
-						}
+					relation: Model.BelongsToOneRelation,
+					modelClass: User,
+					join: {
+						from: 'prompt.userId',
+						to: 'users.id',
+					}
+				},
+				entries: {
+					relation: Model.HasManyRelation,
+					modelClass: Entry,
+					join: {
+						from: 'prompts.id',
+						to: 'entries.promptId'
+					}
 				}
 		}
 	}
