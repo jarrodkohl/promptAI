@@ -89,8 +89,8 @@ const  GetPrompt = (props) => {
 
   return (
     <div className='callout app-main-div'>
-    <h1>PROMPTAI LOGO</h1>
-    <h5>Hit the Generate Prompt Button To fetch info from the AI</h5>
+    <h1>PromptAI</h1>
+    <h5>Click the button to generate a prompt using AI.</h5>
     <div className='gen-prompt-container'>
       <p id="gen-animate" className='gen-prompt-box' value={prompt} />
       <div className='button-container'>
