@@ -1,3 +1,4 @@
+import dotenv from 'dotenv'
 import OpenAiConfig from './OpenAiConfig.js'
 import { OpenAIApi } from "openai"
 
