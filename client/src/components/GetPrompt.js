@@ -1,8 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import PromptTile from './PromptTile';
+import Typed from 'typed.js'
+
+
 
 const  GetPrompt = (props) => {
-  const [prompt, setPrompt] = useState('')
+  const [prompt, setPrompt] = useState("")
   const [generatedPrompts, setGeneratedPrompts] = useState([])
+  const [isLoading, setIsLoading] = useState(false)
+  
  
   const fetchUserPrompts = async () => {
     try {
@@ -14,14 +20,34 @@ const  GetPrompt = (props) => {
     }
   }
 
+  const typed = useRef(null)
+  
   useEffect(() => {
-    fetchUserPrompts()
-  }, [])
+    fetchUserPrompts();
+
+    if (typed.current) {
+      typed.current.destroy()
+    }
+
+    typed.current = new Typed('#gen-animate', {
+      strings: [prompt],
+      typeSpeed: 30,
+      loop: false,
+      backSpeed: 0,
+      cursorChar: '',
+    })
+
+    return () => {
+      typed.current.destroy()
+    };
+  }, [prompt])
 
   const generatePrompt = async (promptText) => {
+    setIsLoading(true)
     try {
       const response = await fetch(`/api/v1/openai/generate-prompt?promptText=${promptText}`)
       const data = await response.json()
+      setIsLoading(false)
       return data.prompt
     } catch (error) {
       console.error(error)
@@ -50,20 +76,34 @@ const  GetPrompt = (props) => {
       console.error(error)
     }
   }
+  const promptTiles = generatedPrompts.map(prompt =>{
+    return(
+      <PromptTile
+      key={prompt.id}
+      id={prompt.id}
+      promptContent={prompt.promptContent}
+      />
+    )
+  })
+  const buttonText = isLoading ? "Tinkering..." : "Generate Prompt";
 
   return (
     <div className='callout app-main-div'>
-      <h1>Call on the Digital MUSE!</h1>
-      <button className='button orange-btn' onClick={handleGeneratePrompt}>Generate Prompt</button>
-      <p>Generated Prompt: {prompt}</p>
-      <button className='button orange-btn' onClick={handleSavePrompt}>Save Prompt</button>
-      <h2>Recent Prompts</h2>
-      <div className='grid-container grid-x grid-margin-x' >
-        {generatedPrompts.map((prompt, index) => (
-          <div className='saved-prompt-tile cell large-4 medium-6 small-12 text-center callout' key={index}>{prompt.promptContent}</div>
-        ))}
+    <h1>PROMPTAI LOGO</h1>
+    <h5>Hit the Generate Prompt Button To fetch info from the AI</h5>
+    <div className='gen-prompt-container'>
+      <p id="gen-animate" className='gen-prompt-box' value={prompt} />
+      <div className='button-container'>
+        <button className='gen-btn button orange-btn' onClick={handleGeneratePrompt} disabled={isLoading}>{buttonText}</button>
+        <button className='gen-save-btn button orange-btn' onClick={handleSavePrompt}>Save Prompt</button>
       </div>
     </div>
+    <h2>Recent Prompts</h2>
+    <div className='grid-x grid-margin-x prompt-tiles-container'>
+      {promptTiles}
+    </div>
+  </div>
+  
   ) 
 }
 

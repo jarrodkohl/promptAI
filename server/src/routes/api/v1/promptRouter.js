@@ -51,6 +51,25 @@
 			}
 		})
 
+		promptRouter.delete('/:id', async (req, res) => {
+			const { id } = req.params;
+			try {
+				const prompt = await Prompt.query().findById(id);
+				if (prompt) {
+					const entries = await prompt.$relatedQuery('entries');
+					if (entries.length === 0) {
+						await Prompt.query().deleteById(id);
+						return res.status(200).json({ message: 'Prompt deleted' });
+					}
+					return res.status(400).json({ message: 'Prompt has entries' });
+				}
+				return res.status(404).json({ message: 'Prompt not found' });
+			} catch (error) {
+				console.error(error);
+				return res.status(500).json({ message: 'Internal server error' });
+			}
+		});
+
 
 		promptRouter.use("/:promptId/entries", promptEntryRouter)
 		promptRouter.use('/:promptId/entries/:entryId', entryRouter)
