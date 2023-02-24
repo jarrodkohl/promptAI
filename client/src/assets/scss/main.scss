@@ -75,12 +75,48 @@
 .top-bar-left{
   background-color: #ff8c00;
 }
+.gen-prompt-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  margin: 20px 0;
+}
 
+.gen-prompt-box{
+  box-shadow: 2px 2px 8px #ee841a;
+  width: 500px;
+  height: auto;
+  border-radius: 10px;
+  padding: 0.5rem;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  white-space: pre-wrap;
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.button-container{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.gen-btn{
+  margin-right: 100px;
+}
+
+.gen-save-btn{
+  margin-left: 100px;
+}
 
 .saved-prompt-tile {
   box-shadow: 2px 2px 8px #5b95f4;
   width: 300px;
-  height: 200px;
+  // height: 200px;
   border-radius: 10px;
   padding: .5rem;
 }

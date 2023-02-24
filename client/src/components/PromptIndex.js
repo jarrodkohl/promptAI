@@ -33,7 +33,7 @@ const PromptIndex = props => {
   return(
     <div className="grid-container prompt-list-container">
       <div className="user-profile-prompt">
-      <h1>{props.user.email}'s Saved Prompts!</h1>
+      <h2>{props.user.email}'s Saved Prompts!</h2>
       </div>
 
       <div className="grid-x grid-margin-x prompt-tiles-container">
