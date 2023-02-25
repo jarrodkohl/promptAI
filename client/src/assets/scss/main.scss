@@ -247,6 +247,10 @@
   margin: 3rem;
 }
 
+.entry-form-container{
+  border: none;
+}
+
 .entry-input{
   box-shadow: 2px 2px 8px #ee841a;
   border-radius: 10px;
@@ -261,7 +265,19 @@
 }
 
 .textarea-field{
-  min-height: 200px;
+  min-height: 100px;
+}
+
+.prompt-show-main{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-btn-container{
+  display: flex;
+  justify-content: space-between;
 }
 
 .edit-prompt-textarea {
