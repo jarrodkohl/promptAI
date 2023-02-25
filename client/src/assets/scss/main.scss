@@ -197,16 +197,27 @@
 .button-container{
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+  align-items: center;
 }
 
-.gen-btn{
-  margin-right: 100px;
+.new-prompt-form-container{
+  display: flex;
+  justify-content: center;
 }
 
-.gen-save-btn{
-  margin-left: 100px;
+.new-prompt-form-input{
+  box-shadow: 1px 1px 4px #1DA1F2;
+  max-width: 500px;
+  border-radius: 10px;
 }
+
+// .gen-btn{
+//   margin-right: 100px;
+// }
+
+// .gen-save-btn{
+//   margin-left: 100px;
+// }
 
 .saved-prompt-tile {
   box-shadow: 2px 2px 8px #5b95f4;
