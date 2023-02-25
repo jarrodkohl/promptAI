@@ -32,7 +32,7 @@ const EntryForm = ({ promptId, addEntry }) => {
 
   return (
     <div>
-      <form className="callout" onSubmit={handleSubmit}>
+      <form className="callout entry-form-container" onSubmit={handleSubmit}>
         <label>
           Title:
           <input className="entry-input title-field"

@@ -12,6 +12,7 @@ const PromptShowPage = ({ match }) => {
   const [entries, setEntries] = useState([])
   const [deletedPrompt, setDeletedPrompt] = useState(false)
   const [isEditing, setIsEditing] = useState(false)
+  const [showEntryForm, setShowEntryForm] = useState(false)
 
   const { id } = match.params
 
@@ -88,6 +89,16 @@ const PromptShowPage = ({ match }) => {
     <EntryTile key={entry.id} entry={entry} />
   ))
 
+  const renderEntryForm = () =>{
+    if (showEntryForm){
+      return(
+        <>
+        <EntryForm promptId={id} addEntry={addEntry} />
+        </>
+      )
+    }
+  }
+
   const renderPrompt = () => {
     if (isEditing) {
       return (
@@ -99,9 +110,17 @@ const PromptShowPage = ({ match }) => {
             }
             className="edit-prompt-textarea"
           />
+          <div className="form-btn-container">
           <button className="save-btn" onClick={handleSave}>
             Save
           </button>
+          <button className="save-btn" onClick={() => setIsEditing(!isEditing)}>
+            Cancel
+          </button>
+          <button className="delete-btn" onClick={handleDelete}>
+          <FaTrash size={20} color="black" />
+          </button>
+          </div>
         </>
       )
     } else {
@@ -109,9 +128,15 @@ const PromptShowPage = ({ match }) => {
         <>
           <h2>Prompt</h2>
           <p className="saved-prompt-tile">{showPrompt.promptContent}</p>
+          <div className="form-btn-container">
+          <button className="edit-btn" onClick={() => setShowEntryForm(!showEntryForm)}>Create Entry</button>
           <button className="edit-btn" onClick={() => setIsEditing(true)}>
             Edit Prompt
           </button>
+          <button className="delete-btn" onClick={handleDelete}>
+          <FaTrash size={20} color="black" />
+          </button>
+          </div>
         </>
       )
     }
@@ -124,11 +149,9 @@ const PromptShowPage = ({ match }) => {
   return (
     <div className="prompt-show-main callout">
       {renderPrompt()}
-      <button className="delete-btn" onClick={handleDelete}>
-        <FaTrash size={20} color="black" />
-      </button>
-      <EntryForm promptId={id} addEntry={addEntry} />
-      <h3 className="entry-list-title">Saved Entries</h3>
+     
+      {renderEntryForm()}
+      {/* <h3 className="entry-list-title">Saved Entries</h3> */}
       <div className="entry-tile-container">
         {entryTiles}
       </div>
