@@ -41,4 +41,16 @@ promptEntryRouter.get('/:entryId', async (req, res) =>{
   }
 })
 
+promptEntryRouter.delete('/:entryId', async (req, res) => {
+  try {
+    const { entryId } = req.params
+    await Entry.query().deleteById(entryId)
+    res.status(204).send()
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'An error occurred while deleting the entry' });
+  }
+})
+
+
 export default promptEntryRouter
