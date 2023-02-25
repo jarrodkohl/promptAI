@@ -45,6 +45,49 @@
   border-radius: 20px;
 }
 
+.delete-btn{
+  margin-left: 30px;
+}
+
+.edit-btn {
+  background-color: transparent;
+  margin: 10px;
+  border: 2px solid #ffa500;
+  color: #ffa500;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.edit-btn:hover {
+  background-color: #ffa500;
+  color: #ffffff;
+}
+
+.save-btn{
+  background-color: transparent;
+  margin: 10px;
+  border: 2px solid #ffa500;
+  color: #ffa500;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+.save-btn:hover {
+  background-color: #ffa500;
+  color: #ffffff;
+}
+
 .app-main-div {
   text-align: center;
 }
@@ -157,6 +200,19 @@
 .textarea-field{
   min-height: 200px;
 }
+
+.edit-prompt-textarea {
+  box-shadow: 2px 2px 8px #ee841a;
+  width: 500px;
+  height: 200px;
+  border-radius: 10px;
+  padding: .5rem;
+  overflow: hidden;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+}
+
+
 
 .entry-list-title{
   text-align: center;
