@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 const LandingPage = () => {
   return (
     <div className="landing-page-container">
-      <h1 className="app-name">Want to become a better writer?</h1>
-      <p className="app-description">Get inspired for your next great story with our Creative Writing Tool!</p>
+      <h1 className="app-name">Want to create more content?</h1>
+      <p className="app-description">Harness the power of AI to create great content faster than ever!</p>
       <div className="call-to-action-container">
-        <Link to="/prompt" className="button primary-btn orange-btn">Go Forth and Generate</Link>
+        <Link to="/prompt" className="button primary-btn orange-btn">Crush your Content Goals</Link>
       </div>
     </div>
   )

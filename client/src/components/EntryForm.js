@@ -38,7 +38,7 @@ const EntryForm = ({ promptId, addEntry }) => {
           <input className="entry-input title-field"
             type="text"
             value={title}
-            placeholder="title required"
+            placeholder="content title"
             onChange={(e) => setTitle(e.target.value)}
             required
           />
@@ -58,7 +58,7 @@ const EntryForm = ({ promptId, addEntry }) => {
           <textarea className="entry-input textarea-field"
             value={entryContent}
             onChange={(e) => setEntryContent(e.target.value)}
-            required
+            placeholder="add notes, links, etc."
           ></textarea>
         </label>
         <button className="orange-btn" type="submit">Save</button>

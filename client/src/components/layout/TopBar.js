@@ -31,10 +31,10 @@ const TopBar = ({ user }) => {
               PromptAi</Link>
           </li>
           <li className="menu-text">
-            <Link className="nav-link" to="/prompt">Create Prompt</Link>
+            <Link className="nav-link" to="/prompt">Create Content</Link>
           </li>
           <li className="menu-text">
-            <Link className="nav-link" to="/prompts">All My Prompts</Link>
+            <Link className="nav-link" to="/prompts">Saved Content</Link>
           </li>
         </ul>
       </div>
