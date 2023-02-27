@@ -16,16 +16,13 @@ const GetNewPromptForm = ({ onGeneratePrompt, isLoading }) => {
     <form  onSubmit={handleSubmit}>
       <div className='new-prompt-form-container'>
         <label>
-          Person or Place
-          <input className='new-prompt-form-input' type="text" value={personPlace} onChange={(event) => setPersonPlace(event.target.value)} />
+          <input className='new-prompt-form-input' type="text" value={personPlace} placeholder="about a..." onChange={(event) => setPersonPlace(event.target.value)} />
         </label>
         <label>
-          Action
-          <input className='new-prompt-form-input' type="text" value={action} onChange={(event) => setAction(event.target.value)} />
+          <input className='new-prompt-form-input' type="text" placeholder='who must...' value={action} onChange={(event) => setAction(event.target.value)} />
         </label>
         <label>
-          Genre
-          <input className='new-prompt-form-input' type="text" value={genre} onChange={(event) => setGenre(event.target.value)} />
+          <input className='new-prompt-form-input' placeholder='in a world...' type="text" value={genre} onChange={(event) => setGenre(event.target.value)} />
         </label>
       </div>
       <div>

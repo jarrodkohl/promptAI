@@ -13,7 +13,7 @@ class OpenAiClient {
     const response = await openai.createCompletion({
       model: "text-davinci-003",
       prompt: promptText,
-      max_tokens: 55,
+      max_tokens: 200,
       temperature: 0.6,
     });
 
