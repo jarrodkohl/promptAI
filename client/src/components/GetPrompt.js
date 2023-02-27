@@ -31,7 +31,7 @@ const  GetPrompt = (props) => {
 
     typed.current = new Typed('#gen-animate', {
       strings: [prompt],
-      typeSpeed: 30,
+      typeSpeed: 10,
       loop: false,
       backSpeed: 0,
       cursorChar: '',
