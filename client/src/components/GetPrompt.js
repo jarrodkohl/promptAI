@@ -45,7 +45,7 @@ const  GetPrompt = (props) => {
   const generatePrompt = async (personPlace, action, genre) => {
     setIsLoading(true)
     try {
-      const promptText = `generate a creative story prompt about ${personPlace} who must ${action} in the theme of ${genre} (max tokens 200)`
+      const promptText = `as a ${personPlace} create a ${genre} with a goal of ${action}  (max tokens 200)`
       const response = await fetch(`/api/v1/openai/generate-prompt?promptText=${promptText}`)
       const data = await response.json()
       setIsLoading(false)
@@ -87,22 +87,21 @@ const  GetPrompt = (props) => {
       />
     )
   })
-  const buttonText = isLoading ? "Tinkering..." : "Generate Prompt";
 
   return (
     <div className='callout app-main-div'>
-    <h1>PromptAI</h1>
+    <h1 className='get-prompt-headline'>PromptAI</h1>
+    <h5 className='sub-header'>add a few keywords to get started</h5>
       <div className='generate-prompt-form'>
         <GetNewPromptForm onGeneratePrompt={handleGeneratePrompt} isLoading={isLoading}/>
       </div>
-    <h5>Click the button to generate a prompt using AI.</h5>
     <div className='gen-prompt-container'>
       <p id="gen-animate" className='gen-prompt-box' value={prompt} />
       <div className='button-container'>
-        <button className='gen-save-btn button orange-btn' onClick={handleSavePrompt}>Save Prompt</button>
+        <button className='gen-save-btn button orange-btn' onClick={handleSavePrompt}>Save</button>
       </div>
     </div>
-    <h2>Recent Prompts</h2>
+    <h2 className='content-title'>Recent Content</h2>
     <div className='grid-x grid-margin-x prompt-tiles-container'>
       {promptTiles}
     </div>

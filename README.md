@@ -1,6 +1,6 @@
-# Creative Writing Tool
+# Creative Content Tool
 
-Welcome to our Creative Writing Tool, a web application that allows users to effortlessly generate unique story prompts at the touch of a button. Our app uses OpenAI's powerful language model to generate prompts, and includes features such as the ability to customize prompts and save favorites for later use. As well as creating a space for writers to write their story and track their progress!
+Welcome to our Content Creation Tool, PromptAI, a web application that allows users to effortlessly generate unique content ideas and posts at the touch of a button. Our app uses OpenAI's powerful language model to generate content, and includes features such as the ability to customize prompts and save favorites for later use. As well as creating a space for creators to take notes and track their progress!
 
 ## Technologies Used
 - JavaScript
@@ -9,15 +9,15 @@ Welcome to our Creative Writing Tool, a web application that allows users to eff
 - OpenAI API
 
 ## Features
-- Generate unique story prompts with OpenAI's language model
-- Customize prompts by editing settings, characters, and plot points
-- Save favorite prompts for later use
-- Real-time updates for the list of saved prompts
+- Generate unique content ideas with OpenAI's language model
+- Customize prompts by editing goals, use cases and platform formats.
+- Save favorite content for later use
+- Real-time updates for the list of saved content
 - Writing assistant with grammar and spell-check
-- Image creation based on generated prompts
+- more features coming soon!
 
 ## How to Use
-To use our Creative Writing Tool, simply visit our web application and click on the "generate prompt" button to generate a new story prompt. You can customize prompts and save your favorites for later use. Our writing assistant feature will check your grammar and spelling, and our image creation feature will generate AI images based on your story prompt.
+To use our Content Tool, simply visit our web application and click on the "generate content" button to generate random content ideas. You can customize prompts by adding an industry or goal or even a specific platform and save your favorites for later use. The more specific you are the more detailed your content is, but as a generator, you can also start vague to get some more ideas about what you should be asking! That way, creating content for your business becomes easy and fun!
 
 ## Installation
 To install our Creative Writing Tool on your local machine, follow these steps:

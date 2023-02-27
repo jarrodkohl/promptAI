@@ -2,6 +2,9 @@
 @import "~foundation-sites/scss/foundation";
 @include foundation-everything;
 // place global css here
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@600&display=swap');
+
+
 *,
 *::before,
 *::after {
@@ -22,6 +25,13 @@
     display: block;
     margin: 0;
   }
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+.sub-header{
+  color: #8b857f;
 }
 
 
@@ -78,6 +88,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-family: 'IBM Plex Mono', monospace;
 }
 
 
@@ -131,7 +142,24 @@
   color: #1DA1F2;
   transform: scale(1.1);
 }
-
+.get-prompt-headline{
+  //should be much bigger
+  font-size: 48px;
+  font-weight: bold;
+  color: #000000;
+  margin: 20px 0;
+  font-family: 'IBM Plex Mono', monospace;
+}
+.gen-btn{
+  margin: 5px;
+}
+.content-title{
+  font-size: 24px;
+  font-weight: bold;
+  color: #000000;
+  margin: 20px 0;
+  font-family: 'IBM Plex Mono', monospace;
+}
 .edit-btn {
   background-color: transparent;
   margin: 10px;
@@ -208,12 +236,15 @@
 .new-prompt-form-container{
   display: flex;
   justify-content: center;
+
 }
 
 .new-prompt-form-input{
   box-shadow: 1px 1px 4px #1DA1F2;
   max-width: 500px;
   border-radius: 10px;
+  margin: 5px;
+  
 }
 
 // .gen-btn{
