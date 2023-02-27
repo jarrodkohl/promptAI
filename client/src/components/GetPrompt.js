@@ -45,7 +45,7 @@ const  GetPrompt = (props) => {
   const generatePrompt = async (personPlace, action, genre) => {
     setIsLoading(true)
     try {
-      const promptText = `generate a creative prompt about ${personPlace} who must ${action} in the theme of ${genre} (max tokens 50)`
+      const promptText = `generate a creative story prompt about ${personPlace} who must ${action} in the theme of ${genre} (max tokens 200)`
       const response = await fetch(`/api/v1/openai/generate-prompt?promptText=${promptText}`)
       const data = await response.json()
       setIsLoading(false)

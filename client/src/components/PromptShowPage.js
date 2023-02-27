@@ -147,12 +147,12 @@ const PromptShowPage = ({ match }) => {
   }
 
   return (
-    <div className="prompt-show-main callout">
+    <div className="prompt-show-main callout grid-container">
       {renderPrompt()}
      
       {renderEntryForm()}
       {/* <h3 className="entry-list-title">Saved Entries</h3> */}
-      <div className="entry-tile-container">
+      <div className="entry-tile-container grid-x grid-margin-x">
         {entryTiles}
       </div>
     </div>

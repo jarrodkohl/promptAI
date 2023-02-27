@@ -55,9 +55,11 @@ const EntryShowPage = ({ match }) => {
   }
 
   return (
-    <div className="callout">
+    <div className="callout entry-show-container">
+      <div className="show-entry-header">
       <h2 className="show-title">{entry.title}</h2>
       <p className="show-label">{entry.label}</p>
+      </div>
       <p className="show-entry-content">{entry.entryContent}</p>
       <button className="delete-btn" onClick={handleDelete}>
       <FaTrash size={16} color="black" />
