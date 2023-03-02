@@ -11,6 +11,9 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const app = express();
 import hbsMiddleware from "express-handlebars";
+import web3Modal from "./web3modal.js";
+
+
 app.set("views", path.join(__dirname, "../views"));
 app.engine(
   "hbs",
@@ -28,6 +31,9 @@ app.use(
     extended: true,
   })
 );
+
+app.use(web3Modal)
+
 app.use(bodyParser.json());
 addMiddlewares(app);
 app.use(rootRouter);

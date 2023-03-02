@@ -19,5 +19,8 @@
   "engines": {
     "node": "^16.18",
     "yarn": "1.22.19"
+  },
+  "dependencies": {
+    "passport-ethereum": "^1.0.0"
   }
 }
