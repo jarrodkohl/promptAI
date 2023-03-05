@@ -42,6 +42,7 @@ const PromptShowPage = ({ match }) => {
 
   const addEntry = (newEntry) => {
     setEntries([...entries, newEntry])
+    setShowEntryForm(false)
   }
 
   const handleDelete = async () => {
