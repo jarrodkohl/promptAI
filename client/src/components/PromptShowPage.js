@@ -127,12 +127,12 @@ const PromptShowPage = ({ match }) => {
     } else {
       return (
         <>
-          <h2>Prompt</h2>
+          <h2>Your Content</h2>
           <p className="saved-prompt-tile">{showPrompt.promptContent}</p>
           <div className="form-btn-container">
           <button className="edit-btn" onClick={() => setShowEntryForm(!showEntryForm)}>Create Entry</button>
           <button className="edit-btn" onClick={() => setIsEditing(true)}>
-            Edit Prompt
+            Edit
           </button>
           <button className="delete-btn" onClick={handleDelete}>
           <FaTrash size={20} color="black" />
