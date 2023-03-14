@@ -91,9 +91,9 @@ const RegistrationForm = () => {
     const userData = {
       id_token,
       email,
-      given_name: givenName,
-      family_name: familyName,
-      google_id: googleId,
+      givenName: givenName,
+      familyName: familyName,
+      googleId: googleId,
     };
     fetch('/auth/google', {
       method: 'POST',
