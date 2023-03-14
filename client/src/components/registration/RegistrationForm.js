@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import FormError from "../layout/FormError";
 import config from "../../config";
+import { GoogleLogin } from 'react-google-login'
 
 const RegistrationForm = () => {
   const [userPayload, setUserPayload] = useState({
@@ -83,6 +84,36 @@ const RegistrationForm = () => {
     });
   };
 
+  const onGoogleSignInSuccess = (response) => {
+    console.log(response);
+    const { email, givenName, familyName, googleId } = response.profileObj;
+    const id_token = response.tokenId;
+    const userData = {
+      id_token,
+      email,
+      given_name: givenName,
+      family_name: familyName,
+      google_id: googleId,
+    };
+    fetch('/auth/google', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(userData)
+    }).then(response => {
+      // Handle the response from your server
+      // If authentication is successful, redirect the user to your app
+      // If not, display an error message and let the user try again
+    }).catch(error => {
+      console.error('Error authenticating with Google', error);
+    });
+  }
+
+  const onGoogleSignInFailure = (error) => {
+    console.error('Error authenticating with Google', error);
+  }
+
   if (shouldRedirect) {
     location.href = "/";
   }
@@ -125,9 +156,23 @@ const RegistrationForm = () => {
         <div>
           <input type="submit" className="button" value="Register" />
         </div>
+        <div>
+          <GoogleLogin
+            clientId={config.google.clientId}
+            onSuccess={onGoogleSignInSuccess}
+            onFailure={onGoogleSignInFailure}
+            cookiePolicy={"single_host_origin"}
+            render={renderProps => (
+              <button onClick={renderProps.onClick} disabled={renderProps.disabled}>
+                Sign In with Google
+              </button>
+            )}
+          />
+        </div>
       </form>
     </div>
   );
+
 };
 
 export default RegistrationForm;
