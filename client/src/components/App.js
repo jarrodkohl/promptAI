@@ -39,9 +39,9 @@ const App = (props) => {
         <AuthenticatedRoute exact path="/prompts" component={PromptIndex} user={currentUser}/>
         <AuthenticatedRoute exact path="/prompts/:id" component={PromptShowPage} user={currentUser}/>
         <AuthenticatedRoute exact path="/prompts/:promptId/entries/:entryId" component={EntryShowPage} user={currentUser} />
-        <Route exact path="/users/new" component={(props) => <RegistrationForm {...props} clientId={process.env.REACT_APP_CLIENT_ID} />} />
+        <Route exact path="/users/new" component={(props) => <RegistrationForm {...props} clientId={process.env.GOOGLE_CLIENT_ID} />} />
 
-        <Route exact path="/register" render={(props) => <RegistrationForm {...props} clientId={process.env.REACT_APP_CLIENT_ID} />} />
+        <Route exact path="/register" render={(props) => <RegistrationForm {...props} clientId={process.env.GOOGLE_CLIENT_ID} />} />
 
         <Route exact path="/user-sessions/new" component={SignInForm} />
       </Switch>
