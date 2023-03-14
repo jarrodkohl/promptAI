@@ -27,9 +27,20 @@ sessionRouter.get("/current", async (req, res) => {
   }
 });
 
+sessionRouter.post("/google", passport.authenticate("google", { scope: ["profile", "email"] }));
+
+sessionRouter.get(
+  "/google/callback",
+  passport.authenticate("google", { failureRedirect: "/login" }),
+  (req, res) => {
+    res.redirect("/dashboard");
+  }
+);
+
 sessionRouter.delete("/", (req, res) => {
   req.logout();
   res.status(200).json({ message: "User signed out" });
 });
 
 export default sessionRouter;
+

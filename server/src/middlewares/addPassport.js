@@ -7,7 +7,9 @@ const addPassport = (app) => {
   app.use(passport.session());
 };
 
-passport.use(strategy);
+passport.use('local', strategy);
+// passport.use('google', googleStrategy); import
+
 passport.serializeUser((user, done) => {
   done(null, user.id);
 });
