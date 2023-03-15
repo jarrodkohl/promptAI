@@ -3,7 +3,7 @@ import FormError from "../layout/FormError";
 import config from "../../config";
 import { GoogleLogin } from 'react-google-login'
 
-const RegistrationForm = () => {
+const RegistrationForm = ({ user }) => {
   const [userPayload, setUserPayload] = useState({
     email: "",
     password: "",
@@ -158,7 +158,7 @@ const RegistrationForm = () => {
         </div>
         <div>
           <GoogleLogin
-            clientId={config.google.clientId}
+            clientId={user?.clientId}
             onSuccess={onGoogleSignInSuccess}
             onFailure={onGoogleSignInFailure}
             cookiePolicy={"single_host_origin"}
