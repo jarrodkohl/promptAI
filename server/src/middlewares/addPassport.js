@@ -1,6 +1,7 @@
 import passport from "passport";
 import strategy from "../authentication/passportStrategy.js";
 import deserializeUser from "..//authentication/deserializeUser.js";
+import googleStrategy from "../authentication/googleStrategy.js";
 
 const addPassport = (app) => {
   app.use(passport.initialize());
@@ -8,6 +9,7 @@ const addPassport = (app) => {
 };
 
 passport.use(strategy);
+passport.use(googleStrategy)
 passport.serializeUser((user, done) => {
   done(null, user.id);
 });
