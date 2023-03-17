@@ -1,6 +1,6 @@
 import { Strategy as GoogleStrategy } from "passport-google-oauth20"
 import dotenv from "dotenv"
-import User from "../models/index"
+import User from "../models/User.js"
 dotenv.config()
 
 const googleAuthHandler = (accessToken, refreshToken, profile, done) =>{
