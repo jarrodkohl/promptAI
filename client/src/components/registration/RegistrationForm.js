@@ -126,6 +126,15 @@ const RegistrationForm = () => {
           <input type="submit" className="button" value="Register" />
         </div>
       </form>
+      <div>
+      <input
+        type="button"
+        className="button google"
+        value="Sign in with Google"
+        onClick={() => window.location.href = '/auth/google'}
+      />
+
+      </div>
     </div>
   );
 };
