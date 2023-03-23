@@ -88,54 +88,62 @@ const RegistrationForm = () => {
   }
 
   return (
-    <div className="grid-container">
-      <h1>Register</h1>
-      <form onSubmit={onSubmit}>
-        <div>
-          <label>
-            Email
-            <input type="text" name="email" value={userPayload.email} onChange={onInputChange} />
-            <FormError error={errors.email} />
-          </label>
-        </div>
-        <div>
-          <label>
-            Password
-            <input
-              type="password"
-              name="password"
-              value={userPayload.password}
-              onChange={onInputChange}
-            />
-            <FormError error={errors.password} />
-          </label>
-        </div>
-        <div>
-          <label>
-            Password Confirmation
-            <input
-              type="password"
-              name="passwordConfirmation"
-              value={userPayload.passwordConfirmation}
-              onChange={onInputChange}
-            />
-            <FormError error={errors.passwordConfirmation} />
-          </label>
-        </div>
-        <div>
-          <input type="submit" className="button" value="Register" />
-        </div>
-      </form>
-      <div>
+    <div class="grid-container reg-container">
+  <h1>Register</h1>
+  <form onSubmit={onSubmit}>
+    <div>
+      <label>
+        Email
+        <input class="reg-form-field" type="text" name="email" value={userPayload.email} onChange={onInputChange} />
+        <FormError error={errors.email} />
+      </label>
+    </div>
+    <div>
+      <label>
+        Password
+        <input
+          type="password"
+          name="password"
+          value={userPayload.password}
+          onChange={onInputChange}
+          class="reg-form-field"
+        />
+        <FormError error={errors.password} />
+      </label>
+    </div>
+    <div>
+      <label>
+        Password Confirmation
+        <input
+          type="password"
+          name="passwordConfirmation"
+          value={userPayload.passwordConfirmation}
+          onChange={onInputChange}
+          class="reg-form-field"
+        />
+        <FormError error={errors.passwordConfirmation} />
+      </label>
+    </div>
+    <div>
+      <input type="submit" class="button reg-btn" value="Register" />
+    </div>
+  </form>
+
+  <div class="google-sign-in">
+    <div className="google-sign-in-text">
+      <p> or sign in with</p>
+    </div>
+    <div class="google-sign-in-button">
       <input
         type="button"
-        className="button google"
-        value="Sign in with Google"
+        class="button google"
+        value="Google"
         onClick={() => window.location.href = '/auth/google'}
       />
-
-      </div>
     </div>
+  </div>
+</div>
+
   );
 };
 

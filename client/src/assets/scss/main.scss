@@ -57,6 +57,69 @@ h1, h2, h3, h4, h5, h6 {
   transition: background-color 0.3s ease;
   cursor: pointer;
 }
+.google {
+  border: none;
+  color: #f7efef;
+  background-color: #f74429;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.reg-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.google-sign-in {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.google-sign-in-text {
+  font-size: 20px;
+  color: #000000;
+  font-weight: bold;
+}
+
+.google-sign-in-button {
+  margin-top: 10px;
+}
+
+
+.google:hover {
+  background-color: #1DA1F2;
+}
+
+.reg-btn {
+  background-color: #1DA1F2;
+  font-size: 16px;
+  border-radius: 20px;
+}
+
+.reg-btn:hover {
+  background-color: #0b6366;
+}
+
+.reg-form-field {
+  max-width: 500px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 4px #8b857f;
+}
 
 .orange-btn:hover {
   background-color: #ff8c00;
