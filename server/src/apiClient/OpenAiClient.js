@@ -19,6 +19,24 @@ class OpenAiClient {
 
     return response.data.choices[0].text
   }
+
+  static async createChat(message) {
+    if (!process.env.BT_OPENAI_API_KEY) {
+      throw new Error('OpenAI API key not found in environment variables')
+    }
+
+    const openai = new OpenAIApi(OpenAiConfig.configuration)
+    const response = await openai.createChatCompletion({
+      model: "gpt-3.5-turbo",
+      messages: [{role: "user", content: `${message}` },
+    ]
+    })
+
+    console.log(response.data.choices[0].message)
+    return response.data.choices[0].message
+  }
+
+
 }
 
 export default OpenAiClient

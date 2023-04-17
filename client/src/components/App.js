@@ -13,6 +13,7 @@ import PromptIndex from "./PromptIndex";
 import PromptShowPage from "./PromptShowPage";
 import LandingPage from "./LandingPage";
 import EntryShowPage from "./EntryShowPage";
+import GetChat from "./GetChat";
 
 
 const App = (props) => {
@@ -36,6 +37,7 @@ const App = (props) => {
       <Switch>
         <Route exact path="/" component={LandingPage} user={currentUser} />
         <AuthenticatedRoute exact path="/prompt" component={GetPrompt} user={currentUser}/>
+        <AuthenticatedRoute exact path="/chat" component={GetChat} user={currentUser}/>
         <AuthenticatedRoute exact path="/prompts" component={PromptIndex} user={currentUser}/>
         <AuthenticatedRoute exact path="/prompts/:id" component={PromptShowPage} user={currentUser}/>
         <AuthenticatedRoute exact path="/prompts/:promptId/entries/:entryId" component={EntryShowPage} user={currentUser} />
