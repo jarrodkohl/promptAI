@@ -58,7 +58,6 @@ const  GetPrompt = (props) => {
 
   const handleGeneratePrompt = async (personPlace, action, genre) => {
     const generatedPrompt = await generatePrompt(personPlace, action, genre)
-    console.log(`generatedPrompt ${generatedPrompt}`)
     setPrompt(generatedPrompt)
   }
   
@@ -95,7 +94,7 @@ const  GetPrompt = (props) => {
       <div className='generate-prompt-form'>
         <GetNewPromptForm onGeneratePrompt={handleGeneratePrompt} isLoading={isLoading}/>
       </div>
-    <div className='gen-prompt-container'>
+    <div className={`gen-prompt-container ${!prompt ? 'hidden' : ''}`}>
       <p id="gen-animate" className='gen-prompt-box' value={prompt} />
       <div className='button-container'>
         <button className='gen-save-btn button orange-btn' onClick={handleSavePrompt}>Save</button>
