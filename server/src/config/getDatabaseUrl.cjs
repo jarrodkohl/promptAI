@@ -4,6 +4,7 @@ const getDatabaseUrl = (nodeEnv) => {
       development: "postgres://postgres:postgres@localhost:5432/promptAI_development",
       test: "postgres://postgres:postgres@localhost:5432/promptAI_test",
       e2e: "postgres://postgres:postgres@localhost:5432/promptAI_e2e",
+      production: process.env.DATABASE_URL,
     }[nodeEnv] || process.env.DATABASE_URL
   );
 };

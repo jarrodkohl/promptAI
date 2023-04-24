@@ -4,7 +4,9 @@ const getDatabaseUrl = require("./src/config/getDatabaseUrl.cjs");
 const migrationPath = "src/db/migrations";
 
 module.exports = {
-  connection: getDatabaseUrl(process.env.NODE_ENV || "development"),
+  // connection: process.env.DATABASE_URL, // getDatabaseUrl(process.env.NODE_ENV),
+  connection: process.env.DATABASE_URL,
+  ssl: { rejectUnauthorized: false },
   client: "pg",
   migrations: {
     directory: migrationPath,
