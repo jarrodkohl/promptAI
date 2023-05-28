@@ -6,7 +6,7 @@ Welcome to our Content Creation Tool, PromptAI, a web application that allows us
 - JavaScript
 - React.js
 - Node.js
-- OpenAI API
+- OpenAI API 
 
 ## Features
 - Generate unique content ideas with OpenAI's language model
@@ -19,7 +19,7 @@ Welcome to our Content Creation Tool, PromptAI, a web application that allows us
 ## How to Use
 To use our Content Tool, simply visit our web application and click on the "generate content" button to generate random content ideas. You can customize prompts by adding an industry or goal or even a specific platform and save your favorites for later use. The more specific you are the more detailed your content is, but as a generator, you can also start vague to get some more ideas about what you should be asking! That way, creating content for your business becomes easy and fun! 
 
-Once content is created you can then edit or delete that content. You can also click on specific content to add notes or organize your content. 
+Once content is created you can then edit or delete that content. You can also click on specific content to add notes or organize your content. If there are suggestions I would be happy to coo=nnect!
 
 ## Installation
 To install our Creative Writing Tool on your local machine, follow these steps:
