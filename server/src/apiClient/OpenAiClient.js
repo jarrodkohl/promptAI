@@ -11,8 +11,8 @@ class OpenAiClient {
 
     const openai = new OpenAIApi(OpenAiConfig.configuration)
     const response = await openai.createCompletion({
-      model: "gpt-3.5-turbo",
-      messages: [{role: "user", content: promptText}],
+      model: "gpt-3.5-turbo-instruct",
+      prompt: promptText,
       max_tokens: 200,
       temperature: 0.6,
     });
